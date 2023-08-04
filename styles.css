@@ -1,0 +1,347 @@
+/*google fonts poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./assets/fuerzabg.jpg);
+    background-size: cover;
+
+}
+a{
+    text-decoration: none;
+    color: rgba(254,90,26,255);
+    padding-right: 30px;
+}
+a:hover{
+    color: white;
+}
+nav{
+  
+    font-weight: 600;
+    padding: 20px;
+    position: relative;
+}
+table,th,td{
+    padding:  1rem;
+    border-collapse: collapse;
+}
+ul{
+    list-style: none;
+    display: flex;
+}
+select{
+    padding: 5px;
+}
+.navbar1{
+    background-color: rgba(39, 73, 65, 0.603);
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+.nav-link{
+    color: white;
+}
+
+.table-body tr:nth-child(even){
+    border-collapse: collapse;
+    background-color: #0000000b;
+}
+.table-body tr:hover{
+    background-color: #fff6;
+}
+
+.form-div form{
+    width: 100%;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+
+}
+.form-ext form{
+    width: 100%;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.input-container input,
+.input-container textarea{
+    width: 100%;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #d63031;
+    outline: 0;
+    color: white;
+    display: flex;
+   
+}
+
+.input-container-ext input,
+.input-container-ext textarea
+{
+    border: none;
+    background: none;
+    border-bottom: 1px solid #d63031;
+    outline: 0;
+    color: white;
+}
+.input-container{
+    
+    margin: 20px;
+    color: white;
+}
+
+.column{
+    color: white;
+    display: flex;
+    column-gap: 15px;
+}
+
+.send-btn{
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(214, 48, 49);
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    font-size: 15px;
+    
+}
+
+.sign-in-title{
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-weight: 600;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-div{
+    margin-top: 20px;
+    max-width: fit-content;
+    width: 100%;
+    background-color: rgba(39, 73, 65, 0.603);
+    backdrop-filter: blur(7px);  
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    justify-content: center;
+    align-items: center;
+}
+
+.table-container{
+    width: 100%;
+    height: 100%;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: auto;
+    align-items: center;
+    justify-content: right;
+}
+.table_header{
+    position: relative;
+    width: 110%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.table-body{
+    width: 100%;
+    background-color: #fffb;
+    margin: 30px ;
+    border-radius: .6rem;
+    overflow: hidden;
+}
+.table-body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.table-body:hover::-webkit-scrollbar{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table-body:hover::-webkit-scrollbar-thumb{
+        visibility: hidden;
+}
+
+#list-personal-header td{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    border-collapse: collapse;
+    padding: 1rem;
+    border-style: none;
+}
+#list-personal tr:nth-child(even){
+    border-collapse: collapse;
+    background-color: #0000000b;
+
+}
+#search-user-input{
+    padding: 2px;
+    margin: 0 0 0 20px;
+    display: block;
+    box-sizing: border-box;
+    border-radius: var(--dt-border-radius);
+    border: solid 1px var(--dt-border-color);
+    color: var(--dt-input-color);
+}
+#mnt-selector{
+    width: 100%;
+}
+#list-personal-header{
+    color: rgb(0, 0, 0);
+    font-weight: 1000;
+    font-size: 15px;
+    padding: 20px;
+   
+}
+
+/*Responsive*/
+@media (max-width: 700px){
+
+    .column{   flex-wrap: wrap;
+    }
+    header{
+        visibility: hidden;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+form{
+    
+    margin: 20px;
+    align-items: center;
+    
+}
+
+
+.form-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px;
+
+}
+
+form input{
+    font-size: 18px;
+    background:none;
+    outline: none;     
+}
+
+.form-div{
+    
+    border-radius: 3%;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    padding: 30px, 10px;
+}
+.sign-in-title{
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+.navbar1{
+    align-items: center;
+    padding: 0%;
+    visibility: visible;
+    background: rgb(0, 0, 0);
+
+}
+
+button{
+    position: relative;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: rgb(249, 112, 0);
+    border:none;
+    border-radius: 5px;
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 10x;
+    width: 150px;
+    margin-left: 10px;
+    margin-right: 10px;     
+}
+button:hover{
+    background-color: rgb(159, 77, 0);
+}
+.login-form{
+    
+    width: fit-content;
+    background-color: aliceblue;
+    font-size: 20px;
+    padding: 50px;
+    border-radius: 2%;
+    position: relative;
+    margin-top: 30px;
+    left: 40%;
+
+}
+.Login-title{
+    font-size: 30px;
+}
+.card{
+    margin-left: 10%;
+    margin-top: 5%;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    align-items: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: fit-content;
+    position: relative;
+    left: 50hv;
+    border-radius: 30px;
+    padding: 15px;
+    }
+#cardProduct-img{
+    height: 150px;
+    width: 150x;
+    margin:20px;
+}
+*/
+
+    
