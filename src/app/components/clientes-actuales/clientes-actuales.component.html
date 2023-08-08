@@ -1,0 +1,42 @@
+
+<link rel="stylesheet" href="clientes-actuales.component.css">
+    <section class="table-container">
+        
+        <section class="table_header">
+            <ul>
+                <li><h1>EI People</h1> </li>
+                <li><input type="text" name="" id="search-user-input" placeholder="Buscar compañero" [(ngModel)]="searchTxt"></li>
+                <!--<li><button id="add-client-btn">+</button></li>-->
+            </ul>
+        </section>
+
+        <table class="table-body">
+            <tr id="list-personal-header">
+                <td><span class="available"></span></td>
+                <td> Nombre</td>
+                <td> Apellidos</td>
+                <td> Departamento</td>
+                <td> Puesto</td>
+                <td> Telefono</td>
+                <td> Correo</td>
+                <td> NSS</td>
+                <td> Operaciones </td>
+            </tr>
+            <tr *ngFor="let empleado of Empleados | search: searchTxt; let iControl=index" id="list-personal">
+                <td><span class="available"></span></td>
+                <td> {{empleado.Nombre}} </td>
+                <td> {{empleado.Apellidos}} </td>
+                <td> {{empleado.Departamento}}</td>
+                <td> {{empleado.Puesto}} </td>
+                <td> {{empleado.Telefono}} </td>
+                <td> {{empleado.Correo}} </td>
+                <td> {{empleado.NSS}} </td>
+                <td>
+                <a (click)="actualizarInfo(empleado.NSS)" routerLink="/editar-empleado/{{empleado.RecordNumber}}">Ver expediente</a>
+                <a class="btn btn-danger"  (click)="borrarClientes(empleado.RecordNumber,iControl)" role="button">Dar de baja</a>
+                </td>
+            </tr>
+        </table>
+
+    </section>
+    

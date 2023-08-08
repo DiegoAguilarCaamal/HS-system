@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="./login-screen.component.css">
+
+
+<div class="form-div">
+    <!---Inicia sesion, si es admin, se toman los datos y puede acceder a reportes y agregar colaboradores-->
+    <p class="sign-in-title">Iniciar Sesion</p>
+    <form (ngSubmit)="Userlogin()" [formGroup]="loginForm">
+        
+        <div class="input-container">
+        <label for="L-Email">Correo</label>
+        <input required type="email" id="L-Email" formControlName="email">
+
+        <label for="L-password">Contraseña</label>
+        <input required type="text" name="L-password" formControlName="password">
+        </div>
+
+        <button class="send-btn" type="submit">Iniciar Sesión</button>
+
+    </form>
+
+</div>

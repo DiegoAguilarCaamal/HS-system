@@ -1,0 +1,77 @@
+
+
+<div class="form-div">
+    
+    <form ngNativeValidate [formGroup]="formularioActualizado" (ngSubmit)="enviardatos()" class="formulario-registro">
+        
+        <div class="form-container" >
+            <div class="input-container">
+            <label for="form-label-1" class="form-label-name">Numero de Seguro Social</label><br>
+            <input required type="text" class="form-name" placeholder="NSS" id="form-label-1"
+            formControlName="NSS">
+            </div>
+    
+            <div class="input-container">
+            <label for="form-label-1" class="form-label-name">Nombres</label><br>
+            <input required type="text" class="form-name" placeholder="Nombres" id="form-label-1"
+            formControlName="nombre">
+            </div>
+    
+            <div class="input-container">
+            <label for="form-label-1" class="form-label-name">Apellidos</label><br>
+            <input required type="text" class="form-name" placeholder="Apellidos" id="form-label-1"
+            formControlName="LastName">
+            </div>
+            
+            <div class="input-container">
+            <label for="form-label-1" class="form-label-name">Fecha de nacimiento</label><br>
+            <input required type="date" class="form-name" placeholder="Fecha de nacimiento" id="form-label-1"
+            formControlName="bDate">
+            </div>
+            
+            <div class="input-container">
+            <label for="form-label-1" class="form-label-name">Departamento</label><br>
+            <input required type="text" class="form-name" id="form-label-1"
+            formControlName="department">
+            </div>
+    
+            <div class="input-container">
+            <label for="password-signIn">Puesto</label><br>
+            <input required name = "password-signIn" type="text" formControlName="position">
+            </div>
+    
+            <div class="input-container">
+            <label for="password-signIn">Fecha de ingreso</label><br>
+            <input required name = "password-signIn" type="date" placeholder="Seleccione una" formControlName="admissionDate">
+            </div>
+    
+            <div class="input-container">
+            <label for="password-signIn">Tipo de sangre</label><br>
+            <input required name = "password-signIn" type="text" formControlName="bloodType">
+            </div>    
+    
+            <div class="input-container">
+            <label for="password-signIn">Locker</label><br>
+            <input required name = "password-signIn" type="text"  formControlName="Locker">
+            </div>    
+    
+            <div class="input-container">
+                <label for="password-signIn">Telefono celular</label><br>
+                <input required name = "password-signIn" type="text" formControlName="cellNumber">
+                </div>
+    
+            <div class="input-container">
+            <label for="email-signIn">Email</label><br>
+            <input required name="email-signIn" type="email" placeholder="usuario@dominio.com" formControlName="correo">
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="submit"> Guardar información </button>
+            <button type="button" >Cancelar</button>
+
+            
+        </div>
+    
+    
+    </form>
+    </div>

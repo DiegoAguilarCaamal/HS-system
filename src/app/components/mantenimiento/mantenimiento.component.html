@@ -1,0 +1,254 @@
+<link rel="stylesheet" href="mantenimiento.component.css">
+
+
+<form [formGroup]="form" id="form">
+    <select formControlName="state" (change)="ChangeMant($event)" id="mnt-selector" >
+      <option *ngFor="let device of devices" value={{device.name}} class="mnt-form-selector">
+        {{ device.name }}
+      </option>
+        <!---cambiar a *ngif="admin"-->
+      <option value="reports">Reportes</option>
+      <option value="epp">Revisión EPP</option>
+    </select>
+</form>
+
+<div  [ngSwitch]="mnt">
+
+  <div class="form-div" *ngSwitchCase="'Extintores'">
+    <p class="sign-in-title">Bítácora de extintores</p>
+    <form [formGroup]="formext" (ngSubmit)="ExtReport()" >
+      <div class="column">
+        <div class="input-container-ext">
+          <ul>
+            <li>
+              <label for="recarga">Fecha de elaboracion</label>
+              <input name="recarga" type="date" formControlName="fecha">
+            </li>
+            <li> <label for="numeroE">Numero de extintor</label>
+              <select name="numeroE" id="numeroE" formControlName="numero">
+                <option *ngFor="let extintor of numeroExtin " value={{extintor.num}}>
+                  {{extintor.num}}
+                </option>
+              </select></li>       
+            <li> 
+              <label for="UbicacionE">Ubicacion</label>
+              <select name="UbicacionE" id="UbE" formControlName="ubicacion">
+                <option *ngFor="let ubicacion of ubicacionE" value={{ubicacion.ubicE}} >
+                  {{ubicacion.ubicE}}
+                </option >
+              </select>
+            </li>
+            <li>
+                <label for="Agente-Quimico">Agente Quimico</label>
+                <select name="Agente-Quimico" id="AQuimico" formControlName="agente">
+                  <option *ngFor="let agente of AgenQ" value={{agente.agente}}>
+                    {{agente.agente}}
+                  </option>
+                </select>
+            </li>
+            <li>
+                  <label for="capacidad">Capacidad</label>
+                  <select name="capacidad" id="capacidad" formControlName="capacidad">
+                    <option *ngFor="let cap of capacidad">
+                      {{cap.size}}
+                    </option>
+                  </select>        
+            </li>
+            <li>
+                  <label for="recarga">Fecha de proxima recarga</label>
+                  <input name="recarga" type="date" formControlName="recarga">
+            </li>
+          </ul>
+          
+        
+          
+                  
+        </div>
+      </div>
+      <div class="input-container">
+      <label for="manómetro">¿El manómetro está en el rango aceptable?</label>
+      <input name="manómetro" type="checkbox" formControlName="manometro">
+
+      <label for="pasador">¿Cuenta con pasador de seguridad?</label>
+      <input name="pasador" type="checkbox" formControlName="pasador">
+
+      <label for="manguera">¿La manguera se encuentra en buen estado?</label>
+      <input name="manguera" type="checkbox" formControlName="manguera">
+
+      <label for="boquilla">¿La boquilla se encuentra en buen estado?</label>
+      <input name="boquilla" type="checkbox" formControlName="boquilla">
+
+      <label for="manija">¿La manija se encuentra en buen estado?</label>
+      <input name="manija" type="checkbox" formControlName="manija">
+
+      <label for="cilindro">¿El cilindro se encuentra sin daño?</label>
+      <input name="cilindro" type="checkbox" formControlName="cilindro">
+
+      <label for="pintura">¿La pintura está en buen estado?</label>
+      <input name="pintura" type="checkbox" formControlName="pintura">
+
+      <label for="señalizacion">¿Se encuentra acompañado de señalización?</label>
+      <input name="señalizacion" type="checkbox" formControlName="senial">
+
+      <label for="acceso">¿El acceso al extintor se encuentra libre?</label>
+      <input name="acceso" type="checkbox" formControlName="acceso">
+
+      <label for="visibilidad">¿La señalización es clara?</label>
+      <input name="visibilidad" type="checkbox" formControlName="visibilidad">
+
+      <label for="Ex-comm">Comentarios</label>
+      <input name="Ex-comm" type="text" formControlName="observaciones">
+      </div>
+    <button type="submit" class="send-btn">Enviar registro</button>
+    </form>
+  </div>
+
+  <!--Botiquínes--->
+  <div class="form-div" *ngSwitchCase="'Botiquines'">
+    <p class="sign-in-title" >LISTA DE INSUMOS- BOTIQUÍN</p>
+    <form [formGroup]="formFa" (ngSubmit)="reportFA()
+    ">
+      <div class="input-container">
+          <table>
+            <input type="date" formControlName ="fecha">
+            <select name="ubicacion" id="" formControlName ="Ubicacion" >
+              <option value="" *ngFor="let ubicacion of ubicacionFA" value={{ubicacion.ubicE}}>
+                {{ubicacion.ubicE}}
+              </option>
+            </select>
+            <tr id="list-personal-header">
+              <td>Descripcion</td>
+              <td>Cantidad existente</td>
+            </tr>
+            <tr>
+              <td><label for="gasas">Gasas 5x5</label></td>
+              <input name="gasas" type="number" formControlName = "gauze5">
+            </tr>
+            <tr>
+              <td><label for="compress10">Compresa 10x10</label></td>
+              <input name="compress10" type="number" formControlName ="compress10">
+            </tr>
+            <tr>
+              <td><label for="band">Venda 5x5</label></td>
+              <input name="band" type="number" formControlName="band">
+            </tr>
+            <tr>
+              <td><label for="gasas">Apósitos</label></td>
+              <input type="number" formControlName="dressing">
+            </tr>
+            <tr>
+              <td><label for="micropore">Micropore</label></td>
+              <input name="micropore" type="number" formControlName="micropore">
+            </tr>
+            <tr>
+              <td><label for="adhesiveB">Bandas adhesivas</label></td>
+              <input name="adhesiveB" type="number" formControlName="adhesiveB">
+            </tr>
+            <tr>
+              <td><label for="water">Agua</label></td>
+              <input name="water" type="checkbox" formControlName="water">
+            </tr>
+            <tr>
+              <td><label for="soap">Jabón</label></td>
+              <input name="soap" type="checkbox" formControlName="soap">
+            </tr>
+            <tr>
+              <td><label for="scissors">Tijeras rectas</label></td>
+              <input name="scissors" type="checkbox" formControlName="scissors">
+            </tr>
+            <tr>
+              <td><label for="gloves">Guantes</label></td>
+              <input name ="gloves" type="checkbox" formControlName="gloves">
+            </tr>
+            <tr>
+              <td><label for="thermometer">Termómetro</label></td>
+              <input name="thermometer" type="checkbox" formControlName="thermometer">
+            </tr>
+            <tr>
+              <td><label for="splint">Férula moldeable</label></td>
+              <input name="splint" type="checkbox" formControlName="splint">
+            </tr>
+            <tr>
+              <td><label for="Fsplint">Ferula para dedo</label></td>
+              <input name="Fsplint" type="checkbox" formControlName="Fsplint">
+            </tr>
+            <tr>
+              <td><label for="o2">Oxímetro</label></td>
+              <input name="o2" type="checkbox" formControlName="o2">
+            </tr>
+            <tr>
+              <td><label for="Scollar">Collarín blando</label></td>
+              <input name="Scollar" type="checkbox" formControlNAme="Scollar">
+            </tr>
+            <tr>
+              <td><label for="Rcollar">Collarín rígido</label></td>
+              <input name="Rcollar" type="checkbox" formControlName="Rcollar">
+            </tr>
+            <tr>
+              <td><label for="ambu">AMBU</label></td>
+              <input name="ambu" type="checkbox" formControlName="ambu">
+            </tr>
+            <tr>
+              <td><label for="pani">Baumanómetro</label></td>
+              <input name="pani" type="checkbox" formControlName="pani">
+            </tr>
+          </table>
+        </div>
+      <button class="send-btn">Validar registro</button>
+    </form>
+
+  </div>
+  
+  <section class="reports-container" *ngSwitchCase="'reports'">
+    <style>
+      .reports-container{
+        background-color: white;
+        
+      }
+      table{
+        border: black 1px solid;
+      }
+    </style>
+    <select name="ext-mont-report" id="ext-month" class="ext-month">
+      
+    </select>
+
+    <section class="ext-header">
+      <table class="table-ext-header">
+        <tr>
+          <td>Digital Vibrations S. de RL de C.V</td>
+          <td>Bitácotra de Revision de extintores</td>
+          <td>Código: R04DSEEI-01</td>
+        </tr>
+        <tr>
+          <td>DEPARTAMENTO</td>
+          <td>SEGURIDAD</td>
+          <td>Página 1 de 1</td>
+        </tr>
+        <tr>
+          <td>Registro/td>
+          <td>Bitácora de revisión de extintores</td>
+          <td>REV 001</td>
+        </tr>
+      </table>
+    </section>
+    <section class="section-ext-table">
+      <table class="ext-table-body">
+
+      </table>
+    </section>
+    <section class="ext-footer">
+      <table>
+        <tr>
+          <td>Digital Vibrations S. de RL de C.V</td>
+          <td>Bitácotra de Revision de extintores</td>
+          <td>Código: R04DSEEI-01</td>
+        </tr>
+      </table>
+    </section>
+  </section>
+
+
+</div>
+
+

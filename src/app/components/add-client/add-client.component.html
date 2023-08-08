@@ -1,0 +1,93 @@
+
+<link rel="stylesheet" href="add-client.component.css">
+
+<div class="form-div">
+    
+<form ngNativeValidate [formGroup]="formularioClientes" (ngSubmit)="enviardatos()" class="formulario-registro" enctype="multipart/form-data">
+    <p class="sign-in-title">Agregar Colaborador</p>
+
+    <div class="form-container" >
+
+        <div class="input-container">
+        <label for="form-label-1" class="form-label-name">Nombres</label><br>
+        <input required type="text" class="form-name" placeholder="Nombre(s)"
+        formControlName="nombre">
+        </div>
+
+        <div class="input-container">
+        <label for="form-label-1" class="form-label-name">Apellidos</label><br>
+        <input required type="text" class="form-name" placeholder="Apellidos" 
+        formControlName="LastName" >
+        </div>
+
+        <div class="input-container">
+            <label for="form-label-1" class="form-label-name">Contraseña</label><br>
+            <input required type="text" class="form-name" placeholder="Contraseña" 
+            formControlName="password" >
+        </div>
+        <div class="input-container">
+            <label for="form-label-1" class="form-label-name">Confirmar contraseña</label><br>
+            <input required type="text" class="form-name" placeholder="Confirme la contraseña"
+              formControlName="confirmPassword">
+        </div>
+        <div class="input-container">
+            <label for="form-label-1" class="form-label-name">Numero de Seguro Social</label><br>
+            <input required type="number" class="form-name" placeholder="NSS"
+            formControlName="NSS">
+        </div>
+        
+        <div class="column">
+            <div class="input-container">
+            <label for="form-label-1" class="form-label-name">Fecha de nacimiento</label><br>
+            <input required type="date" class="form-name" placeholder="Fecha de nacimiento" 
+            formControlName="bDate">
+            </div>
+            
+            <div class="input-container">
+            <label for="form-label-1" class="form-label-name">Departamento</label><br>
+            <input required type="text" class="form-name" 
+            formControlName="department">
+            </div>
+
+            <div class="input-container">
+            <label for="password-signIn">Puesto</label><br>
+            <input required name = "password-signIn" type="text" formControlName="position">
+            </div>
+        </div>
+
+        <div class="column">
+
+            <div class="input-container">
+            <label for="password-signIn">Fecha de ingreso</label><br>
+            <input required name = "password-signIn" type="date" placeholder="Seleccione una" formControlName="admissionDate">
+            </div>
+
+            <div class="input-container">
+            <label for="password-signIn">Tipo de sangre</label><br>
+            <input required name = "password-signIn" type="text" formControlName="bloodType">
+            </div>    
+
+            <div class="input-container">
+            <label for="password-signIn">Locker</label><br>
+            <input required name = "password-signIn" type="text"  formControlName="Locker">
+            </div>    
+
+        </div>
+
+        <div class="column">
+
+            <div class="input-container">
+            <label for="password-signIn">Telefono celular</label><br>
+            <input required name = "password-signIn" type="text" formControlName="cellNumber">
+            </div>
+
+            <div class="input-container">
+            <label for="email-signIn">Email</label><br>
+            <input required name="email-signIn" type="email" placeholder="usuario@dominio.com" formControlName="correo">
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="send-btn"> Dar de alta </button>
+</form>
+<!-- List group -->
+</div>
